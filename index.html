@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soul Society Store - Loja Oficial</title>
+
+  <!-- Bootstrap 5 CSS via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    /* Estilos visuais personalizados adicionais */
+    .brand-logo {
+      letter-spacing: 1px;
+    }
+    .carousel-item img {
+      height: 400px;
+      object-fit: cover;
+    }
+    .category-card img {
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+    .product-card img {
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+    .banner-box {
+      min-height: 220px;
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+  <!-- ========================================================= -->
+  <!-- 1. FAIXA DE AVISO NO TOPO                                 -->
+  <!-- ========================================================= -->
+  <div class="bg-dark text-white text-center py-2 fw-bold small border-bottom border-warning">
+    ⚡ FRETE GRÁTIS em compras acima de R$ 199 para todo o Brasil!
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- 2. NAVBAR RESPONSIVA                                      -->
+  <!-- ========================================================= -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+    <div class="container">
+      <!-- Logo da Loja -->
+      <a class="navbar-brand fw-bold text-warning brand-logo fs-4" href="#">
+        <i class="bi bi-intersect me-1"></i> SOUL SOCIETY
+      </a>
+
+      <!-- Botão Carrinho Mobile e Toggler -->
+      <div class="d-flex align-items-center order-lg-last ms-auto ms-lg-3">
+        <a href="#carrinho" class="btn btn-outline-warning position-relative me-2 me-lg-0">
+          <i class="bi bi-cart3"></i>
+          <span class="d-none d-sm-inline ms-1">Carrinho</span>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            3
+          </span>
+        </a>
+        <button class="navbar-toggler border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar" aria-controls="menuNavbar" aria-expanded="false" aria-label="Alternar navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <!-- Menu Principal -->
+      <div class="collapse navbar-collapse" id="menuNavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Início</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdownCategorias" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categorias
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownCategorias">
+              <li><a class="dropdown-item" href="#categorias">Zanpakutōs</a></li>
+              <li><a class="dropdown-item" href="#categorias">Haoris & Roupas</a></li>
+              <li><a class="dropdown-item" href="#categorias">Action Figures</a></li>
+              <li><a class="dropdown-item" href="#categorias">Mangás & HQs</a></li>
+              <li><a class="dropdown-item" href="#categorias">Acessórios</a></li>
+              <li><a class="dropdown-item" href="#categorias">Cosplays</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#destaques">Lançamentos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#beneficios">Vantagens</a>
+          </li>
+        </ul>
+
+        <!-- Campo de Busca: Ocupa linha inteira no mobile (w-100) e tamanho normal no desktop -->
+        <form class="d-flex w-100 w-lg-auto my-2 my-lg-0" role="search" onsubmit="event.preventDefault();">
+          <div class="input-group">
+            <input class="form-control bg-dark text-white border-secondary" type="search" placeholder="Buscar no Seireitei..." aria-label="Buscar">
+            <button class="btn btn-warning" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-4">
+
+    <!-- ========================================================= -->
+    <!-- 3. CARROSSEL COM 3 SLIDES                                 -->
+    <!-- IMAGENS UTILIZADAS AQUI (Troque as URLs no src="...")    -->
+    <!-- ========================================================= -->
+    <section class="mb-5">
+      <div id="carrosselDestaques" class="carousel slide shadow-sm rounded overflow-hidden" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carrosselDestaques" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carrosselDestaques" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carrosselDestaques" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <!-- URL Imagem Slide 1 -->
+            <img src="fotos\faca.jpg" class="d-block w-100" alt="Coleção Zanpakutos">
+            <div class="carousel-caption d-none d-md-block text-start bg-dark bg-opacity-75 p-3 rounded">
+              <span class="badge bg-warning text-dark mb-1">Edição Limitada</span>
+              <h5>Desperte sua Bankai</h5>
+              <p class="mb-0">Réplicas oficiais forjadas com detalhes minuciosos e acabamento premium.</p>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <!-- URL Imagem Slide 2 -->
+            <img src="fotos\faca2.jpg" class="d-block w-100" alt="Action Figures">
+            <div class="carousel-caption d-none d-md-block text-start bg-dark bg-opacity-75 p-3 rounded">
+              <span class="badge bg-danger mb-1">Lançamento</span>
+              <h5>Figures de Colecionador</h5>
+              <p class="mb-0">Estátuas raras dos Capitães e Espadas do Gotei 13.</p>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <!-- URL Imagem Slide 3 -->
+            <img src="https://placehold.co/1200x400/111827/d4af37?text=VESTUARIO+E+COSPLAY+OFICIAL" class="d-block w-100" alt="Vestuário e Cosplay">
+            <div class="carousel-caption d-none d-md-block text-start bg-dark bg-opacity-75 p-3 rounded">
+              <span class="badge bg-warning text-dark mb-1">Desconto de 20%</span>
+              <h5>Haoris e Mantos Sagrados</h5>
+              <p class="mb-0">Sinta o poder de um Capitão com tecidos de altíssima fidelidade.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carrosselDestaques" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carrosselDestaques" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 4. CATEGORIAS (6 no Desktop / 3 no Celular)              -->
+    <!-- IMAGENS UTILIZADAS AQUI (Troque as URLs no src="...")    -->
+    <!-- ========================================================= -->
+    <section id="categorias" class="mb-5">
+      <h3 class="fw-bold mb-3">Categorias em Destaque</h3>
+      <div class="row g-3 text-center">
+        <!-- Categoria 1 -->
+        <div class="col-4 col-lg-2">
+          <div class="card category-card h-100 p-2 shadow-sm border-0">
+            <!-- Imagem Categoria 1 -->
+            <img src="https://placehold.co/200x200/111827/d4af37?text=Zanpakutos" class="card-img-top rounded" alt="Zanpakutōs">
+            <div class="card-body p-1 mt-2">
+              <h6 class="card-title mb-0 small fw-bold text-dark">Zanpakutōs</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Categoria 2 -->
+        <div class="col-4 col-lg-2">
+          <div class="card category-card h-100 p-2 shadow-sm border-0">
+            <!-- Imagem Categoria 2 -->
+            <img src="https://placehold.co/200x200/1f2937/ffffff?text=Haoris" class="card-img-top rounded" alt="Haoris">
+            <div class="card-body p-1 mt-2">
+              <h6 class="card-title mb-0 small fw-bold text-dark">Haoris</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Categoria 3 -->
+        <div class="col-4 col-lg-2">
+          <div class="card category-card h-100 p-2 shadow-sm border-0">
+            <!-- Imagem Categoria 3 -->
+            <img src="https://placehold.co/200x200/0f1115/dc3545?text=Figures" class="card-img-top rounded" alt="Action Figures">
+            <div class="card-body p-1 mt-2">
+              <h6 class="card-title mb-0 small fw-bold text-dark">Figures</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Categoria 4 -->
+        <div class="col-4 col-lg-2">
+          <div class="card category-card h-100 p-2 shadow-sm border-0">
+            <!-- Imagem Categoria 4 -->
+            <img src="https://placehold.co/200x200/374151/d4af37?text=Mangas" class="card-img-top rounded" alt="Mangás">
+            <div class="card-body p-1 mt-2">
+              <h6 class="card-title mb-0 small fw-bold text-dark">Mangás</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Categoria 5 -->
+        <div class="col-4 col-lg-2">
+          <div class="card category-card h-100 p-2 shadow-sm border-0">
+            <!-- Imagem Categoria 5 -->
+            <img src="https://placehold.co/200x200/111827/ffffff?text=Acessorios" class="card-img-top rounded" alt="Acessórios">
+            <div class="card-body p-1 mt-2">
+              <h6 class="card-title mb-0 small fw-bold text-dark">Acessórios</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Categoria 6 -->
+        <div class="col-4 col-lg-2">
+          <div class="card category-card h-100 p-2 shadow-sm border-0">
+            <!-- Imagem Categoria 6 -->
+            <img src="https://placehold.co/200x200/000000/d4af37?text=Cosplays" class="card-img-top rounded" alt="Cosplay">
+            <div class="card-body p-1 mt-2">
+              <h6 class="card-title mb-0 small fw-bold text-dark">Cosplay</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 5. DESTAQUES (PRODUTOS) GRID 4 / 2 / 1                    -->
+    <!-- IMAGENS UTILIZADAS AQUI (Troque as URLs no src="...")    -->
+    <!-- ========================================================= -->
+    <section id="destaques" class="mb-5">
+      <h3 class="fw-bold mb-3">Produtos em Destaque</h3>
+      <div class="row g-4">
+
+        <!-- Produto 1 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card product-card h-100 shadow-sm position-relative border-0">
+            <span class="badge bg-danger position-absolute top-0 start-0 m-2 px-2 py-1">Promoção</span>
+            <!-- Imagem Produto 1 -->
+            <img src="https://placehold.co/400x300/111827/d4af37?text=Katana+Zangetsu" class="card-img-top" alt="Katana Zangetsu">
+            <div class="card-body d-flex flex-column p-3">
+              <h5 class="card-title fw-bold fs-6 mb-1 text-dark">Katana Zangetsu (Shikai)</h5>
+              <p class="card-text text-muted small flex-grow-1">Réplica forjada em aço carbono decorativo de 104cm.</p>
+              <div class="mb-3">
+                <span class="text-decoration-line-through text-muted small me-2">R$ 349,90</span>
+                <span class="fw-bold text-dark fs-5">R$ 249,90</span>
+              </div>
+              <div class="d-grid gap-2">
+                <button class="btn btn-warning fw-bold text-dark" type="button">
+                  <i class="bi bi-cart-plus me-1"></i> Adicionar ao carrinho
+                </button>
+                <button class="btn btn-outline-secondary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#modalProduto1">
+                  Ver detalhes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produto 2 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card product-card h-100 shadow-sm position-relative border-0">
+            <span class="badge bg-danger position-absolute top-0 start-0 m-2 px-2 py-1">Promoção</span>
+            <!-- Imagem Produto 2 -->
+            <img src="https://placehold.co/400x300/1f2937/ffffff?text=Haori+Esquadrao+10" class="card-img-top" alt="Haori Capitão 10">
+            <div class="card-body d-flex flex-column p-3">
+              <h5 class="card-title fw-bold fs-6 mb-1 text-dark">Haori Capitão Esquadrão 10</h5>
+              <p class="card-text text-muted small flex-grow-1">Manto em tecido Oxford premium com bordados oficiais.</p>
+              <div class="mb-3">
+                <span class="text-decoration-line-through text-muted small me-2">R$ 219,90</span>
+                <span class="fw-bold text-dark fs-5">R$ 159,90</span>
+              </div>
+              <div class="d-grid gap-2">
+                <button class="btn btn-warning fw-bold text-dark" type="button">
+                  <i class="bi bi-cart-plus me-1"></i> Adicionar ao carrinho
+                </button>
+                <button class="btn btn-outline-secondary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#modalProduto2">
+                  Ver detalhes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produto 3 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card product-card h-100 shadow-sm position-relative border-0">
+            <span class="badge bg-danger position-absolute top-0 start-0 m-2 px-2 py-1">Promoção</span>
+            <!-- Imagem Produto 3 -->
+            <img src="https://placehold.co/400x300/0f1115/dc3545?text=Figure+Ichigo+Bankai" class="card-img-top" alt="Action Figure Ichigo">
+            <div class="card-body d-flex flex-column p-3">
+              <h5 class="card-title fw-bold fs-6 mb-1 text-dark">Action Figure Ichigo Bankai</h5>
+              <p class="card-text text-muted small flex-grow-1">Estátua colecionável em PVC de 28cm com base translúcida.</p>
+              <div class="mb-3">
+                <span class="text-decoration-line-through text-muted small me-2">R$ 429,90</span>
+                <span class="fw-bold text-dark fs-5">R$ 329,90</span>
+              </div>
+              <div class="d-grid gap-2">
+                <button class="btn btn-warning fw-bold text-dark" type="button">
+                  <i class="bi bi-cart-plus me-1"></i> Adicionar ao carrinho
+                </button>
+                <button class="btn btn-outline-secondary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#modalProduto3">
+                  Ver detalhes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produto 4 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card product-card h-100 shadow-sm position-relative border-0">
+            <span class="badge bg-danger position-absolute top-0 start-0 m-2 px-2 py-1">Promoção</span>
+            <!-- Imagem Produto 4 -->
+            <img src="https://placehold.co/400x300/374151/d4af37?text=Box+Manga+Bleach" class="card-img-top" alt="Box Mangá Bleach">
+            <div class="card-body d-flex flex-column p-3">
+              <h5 class="card-title fw-bold fs-6 mb-1 text-dark">Box Mangá Bleach - Soul Society</h5>
+              <p class="card-text text-muted small flex-grow-1">Coleção completa do arco Soul Society com sobrecapas especiais.</p>
+              <div class="mb-3">
+                <span class="text-decoration-line-through text-muted small me-2">R$ 249,90</span>
+                <span class="fw-bold text-dark fs-5">R$ 189,90</span>
+              </div>
+              <div class="d-grid gap-2">
+                <button class="btn btn-warning fw-bold text-dark" type="button">
+                  <i class="bi bi-cart-plus me-1"></i> Adicionar ao carrinho
+                </button>
+                <button class="btn btn-outline-secondary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#modalProduto4">
+                  Ver detalhes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- MODAIS DE PRODUTOS                                        -->
+    <!-- IMAGENS UTILIZADAS AQUI (Troque as URLs no src="...")    -->
+    <!-- ========================================================= -->
+
+    <!-- Modal Produto 1 -->
+    <div class="modal fade" id="modalProduto1" tabindex="-1" aria-labelledby="modalLabel1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="modalLabel1">Katana Zangetsu (Forma Shikai)</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body text-center">
+            <!-- Imagem Modal 1 -->
+            <img src="https://placehold.co/500x350/111827/d4af37?text=Katana+Zangetsu+Detalhes" class="img-fluid rounded mb-3" alt="Katana Zangetsu">
+            <p class="text-muted small">
+              Réplica em tamanho real (104cm) forjada em aço carbono decorativo. Acompanha bainha estilizada e suporte de mesa.
+            </p>
+            <div class="fs-4 fw-bold text-dark mb-2">R$ 249,90</div>
+            <span class="badge bg-success">Em estoque</span>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-warning fw-bold">Adicionar ao carrinho</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Produto 2 -->
+    <div class="modal fade" id="modalProduto2" tabindex="-1" aria-labelledby="modalLabel2" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="modalLabel2">Haori Capitão Esquadrão 10</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body text-center">
+            <!-- Imagem Modal 2 -->
+            <img src="https://placehold.co/500x350/1f2937/ffffff?text=Haori+Esquadrao+10+Detalhes" class="img-fluid rounded mb-3" alt="Haori Esquadrão 10">
+            <p class="text-muted small">
+              Manto tradicional dos Capitães em tecido Oxford com forro e numeração bordada. Disponível nos tamanhos P, M, G e GG.
+            </p>
+            <div class="fs-4 fw-bold text-dark mb-2">R$ 159,90</div>
+            <span class="badge bg-success">Em estoque</span>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-warning fw-bold">Adicionar ao carrinho</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Produto 3 -->
+    <div class="modal fade" id="modalProduto3" tabindex="-1" aria-labelledby="modalLabel3" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="modalLabel3">Action Figure Ichigo Bankai</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body text-center">
+            <!-- Imagem Modal 3 -->
+            <img src="https://placehold.co/500x350/0f1115/dc3545?text=Figure+Ichigo+Detalhes" class="img-fluid rounded mb-3" alt="Action Figure Ichigo">
+            <p class="text-muted small">
+              Estateta ricamente detalhada em PVC de alta qualidade. Acompanha base expositora com efeito de energia espiritual transparente.
+            </p>
+            <div class="fs-4 fw-bold text-dark mb-2">R$ 329,90</div>
+            <span class="badge bg-success">Em estoque</span>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-warning fw-bold">Adicionar ao carrinho</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Produto 4 -->
+    <div class="modal fade" id="modalProduto4" tabindex="-1" aria-labelledby="modalLabel4" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fw-bold" id="modalLabel4">Box Mangá Bleach - Arc Soul Society</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body text-center">
+            <!-- Imagem Modal 4 -->
+            <img src="https://placehold.co/500x350/374151/d4af37?text=Box+Manga+Detalhes" class="img-fluid rounded mb-3" alt="Box Mangá Bleach">
+            <p class="text-muted small">
+              Coleção oficial reunindo os volumes da saga Soul Society. Acompanha marcador de páginas exclusivo e poster de colecionador.
+            </p>
+            <div class="fs-4 fw-bold text-dark mb-2">R$ 189,90</div>
+            <span class="badge bg-success">Em estoque</span>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-warning fw-bold">Adicionar ao carrinho</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- 6. DOIS BANNERS LADO A LADO (6 + 6)                       -->
+    <!-- IMAGENS DE FUNDO UTILIZADAS (Troque no url('...'))       -->
+    <!-- ========================================================= -->
+    <section class="mb-5">
+      <div class="row g-4">
+        <!-- Banner 1 -->
+        <div class="col-12 col-md-6">
+          <div class="banner-box p-4 rounded text-white shadow-sm d-flex flex-column justify-content-center" 
+               style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://placehold.co/600x300/0f1115/d4af37?text=INSIGNIAS+DOS+ESQUADROES') center/cover;">
+            <span class="badge bg-warning text-dark w-auto align-self-start mb-2">Coleção Especial</span>
+            <h4 class="fw-bold text-white mb-2">Insígnias dos Esquadrões</h4>
+            <p class="small text-light mb-3">Garanta o distintivo autêntico do seu Capitão preferido com até 30% OFF.</p>
+            <div>
+              <a href="#destaques" class="btn btn-warning btn-sm fw-bold">Conferir Ofertas</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Banner 2 -->
+        <div class="col-12 col-md-6">
+          <div class="banner-box p-4 rounded text-white shadow-sm d-flex flex-column justify-content-center" 
+               style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://placehold.co/600x300/181b22/ffffff?text=LINHA+URBANA+CASUAL') center/cover;">
+            <span class="badge bg-danger w-auto align-self-start mb-2">Novidades</span>
+            <h4 class="fw-bold text-white mb-2">Roupas & Moda Estilizada</h4>
+            <p class="small text-light mb-3">Camisetas, moletons e acessórios para expressar sua paixão no dia a dia.</p>
+            <div>
+              <a href="#destaques" class="btn btn-warning btn-sm fw-bold">Ver Coleção</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 7. BENEFÍCIOS EM 3 COLUNAS (4 + 4 + 4)                    -->
+    <!-- ========================================================= -->
+    <section id="beneficios" class="mb-5 bg-white p-4 p-md-5 rounded shadow-sm border text-center">
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <div class="fs-1 text-warning mb-2"><i class="bi bi-truck"></i></div>
+          <h5 class="fw-bold mb-2">Envio Rápido</h5>
+          <p class="text-muted small mb-0">Entregas ágeis e rastreadas para todo o território nacional.</p>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="fs-1 text-warning mb-2"><i class="bi bi-shield-check"></i></div>
+          <h5 class="fw-bold mb-2">Pagamento Seguro</h5>
+          <p class="text-muted small mb-0">Ambiente 100% protegido com suporte a Pix e cartão em até 12x.</p>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="fs-1 text-warning mb-2"><i class="bi bi-award"></i></div>
+          <h5 class="fw-bold mb-2">Garantia de Qualidade</h5>
+          <p class="text-muted small mb-0">Produtos colecionáveis selecionados com garantia total de satisfação.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- 8. NEWSLETTER COM INPUT-GROUP                             -->
+    <!-- ========================================================= -->
+    <section class="mb-5 p-4 p-md-5 bg-dark text-white rounded text-center shadow-sm border border-secondary">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+          <h4 class="fw-bold text-warning mb-2">Junte-se à Soul Society</h4>
+          <p class="text-secondary small mb-4">Inscreva-se para receber avisos de novos colecionáveis e cupons de desconto exclusivos.</p>
+          
+          <form onsubmit="event.preventDefault();" class="row g-2 justify-content-center">
+            <div class="col-12 col-sm-8 col-md-9">
+              <div class="input-group">
+                <span class="input-group-text bg-secondary border-secondary text-white">
+                  <i class="bi bi-envelope"></i>
+                </span>
+                <input type="email" class="form-control" placeholder="Digite seu e-mail de caçador..." aria-label="E-mail para newsletter" required>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3">
+              <button class="btn btn-warning w-100 fw-bold" type="submit">Assinar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- 9. RODAPÉ EM 4 COLUNAS (3 + 3 + 3 + 3)                   -->
+  <!-- ========================================================= -->
+  <footer class="bg-dark text-white pt-5 pb-4 border-top border-warning">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <!-- Coluna 1 -->
+        <div class="col-12 col-md-3">
+          <h5 class="text-warning fw-bold mb-3">
+            <i class="bi bi-intersect"></i> SOUL SOCIETY
+          </h5>
+          <p class="small text-secondary mb-3">A loja oficial e definitiva para caçadores de relíquias de anime, mangás e colecionáveis raros.</p>
+          <div class="d-flex gap-3 fs-5 text-secondary">
+            <a href="#" class="text-secondary"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-secondary"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-secondary"><i class="bi bi-tiktok"></i></a>
+          </div>
+        </div>
+
+        <!-- Coluna 2 -->
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold mb-3 text-white">Navegação</h6>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li><a href="#" class="text-secondary text-decoration-none">Página Inicial</a></li>
+            <li><a href="#destaques" class="text-secondary text-decoration-none">Produtos em Destaque</a></li>
+            <li><a href="#categorias" class="text-secondary text-decoration-none">Categorias</a></li>
+            <li><a href="#beneficios" class="text-secondary text-decoration-none">Vantagens</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3 -->
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold mb-3 text-white">Atendimento</h6>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li><a href="#" class="text-secondary text-decoration-none">Central de Ajuda</a></li>
+            <li><a href="#" class="text-secondary text-decoration-none">Rastrear Pedido</a></li>
+            <li><a href="#" class="text-secondary text-decoration-none">Trocas e Devoluções</a></li>
+            <li><a href="#" class="text-secondary text-decoration-none">Política de Privacidade</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 4 -->
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold mb-3 text-white">Contato & SAC</h6>
+          <p class="small text-secondary mb-1"><i class="bi bi-envelope text-warning me-2"></i>suporte@soulsociety.com.br</p>
+          <p class="small text-secondary mb-3"><i class="bi bi-telephone text-warning me-2"></i>0800 777 1010</p>
+          <div class="d-flex gap-2 fs-4 text-secondary">
+            <i class="bi bi-qr-code text-warning" title="PIX"></i>
+            <i class="bi bi-credit-card" title="Cartão"></i>
+            <i class="bi bi-bank" title="Boleto"></i>
+          </div>
+        </div>
+      </div>
+
+      <hr class="border-secondary">
+
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small text-secondary">
+        <p class="mb-2 mb-md-0">&copy; 2026 Soul Society Store. Todos os direitos reservados.</p>
+        <p class="mb-0">Desenvolvido com Bootstrap 5</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JavaScript Bundle via CDN (necessário para modal, carrossel e dropdowns) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
